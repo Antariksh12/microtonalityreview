@@ -42,7 +42,7 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="kicker">Conference presentation · Review paper</div>
   <div class="title">Beyond Pitch</div>
   <div class="subtitle">A Review of Microtonality in Indian Classical Music<br><span class="accent">Śruti · intonation · continuous pitch · auditory perception</span></div>
-  <div class="author"><strong>Antariksh Pasricha</strong><br>Research Scholar · National Institute of Advanced Studies, Bengaluru<br><span class="muted">Research interests: Indian classical music, pitch perception & Auditory Neuroscience</span></div>
+  <div class="author"><strong>Antariksh Pasricha</strong><br>Research Scholar · National Institute of Advanced Studies, Bengaluru<br><span class="muted">Research interests: Indian classical music, pitch perception & computational music analysis</span></div>
   <div style="margin-top:2.3rem" class="callout">The central question is not simply <b>“Does Indian music use intervals smaller than a semitone?”</b> but <b>how pitch is theorised, performed, and perceived.</b></div>
 </section>
 
@@ -115,8 +115,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="two">
     <div>
       <p class="lead">The historical number <b>22</b> is central to Indian music theory, but modern reconstructions disagree on exact ratios, positions and interpretation.</p>
-      <div class="card"><ul><li>The Nāṭyaśāstra tradition distributes śrutis unequally among the seven svara regions.</li><li>Later authors and modern theorists propose different mathematical mappings.</li><li>Performance data do not support treating all Indian pitch practice as one universal 22-frequency keyboard.</li></ul></div>
-      <p class="ref">Rao & van der Meer (2010); Serrà et al. (2011).</p>
+      <div class="card"><ul><li>The Nāṭyaśāstra tradition distributes śrutis unequally among the seven svara regions.</li><li><b>Dr. Vidyadhar Oke</b> offers a modern mathematical/practical reconstruction of 22 śrutis and has translated that model into specially designed instruments, including a 22-śruti harmonium.</li><li><b>Mohan (2023)</b> compares Bharata’s and Oke’s methods and highlights differences in method, model and even the implied conception of śruti, testing them against earlier empirical pitch-measurement evidence.</li><li>Performance data therefore should not be collapsed into one universal 22-frequency keyboard.</li></ul></div>
+      <p class="ref">Rao & van der Meer (2010); Mohan (2023); Serrà et al. (2011). Oke is presented here as a modern reconstruction/model, not as settled empirical consensus.</p>
     </div>
     <div>
       <svg class="diagram" viewBox="0 0 600 380">
@@ -152,14 +152,25 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 </section>
 
 <section class="slide">
-  <div class="kicker">07 · Empirical evidence</div><h1>What do computational tuning studies actually show?</h1>
-  <table class="compare">
-    <tr><th>Study</th><th>Approach</th><th>Finding relevant to this review</th></tr>
-    <tr><td><b>Serrà et al. (2011)</b><br>ISMIR</td><td>Stable f₀ estimates + interval histograms from sung Carnatic and Hindustani recordings; comparison with 12-note JI and ET references.</td><td>Carnatic and Hindustani tuning distributions differed. Carnatic tended more toward just-intonation references; Hindustani showed more equal-tempered influence. Carnatic also showed signs of a more continuous pitch distribution. Their data did <b>not</b> provide strong evidence for further universal octave subdivisions.</td></tr>
-    <tr><td><b>Koduri et al. (2014)</b><br>JNMR</td><td>Performance pitch histograms and context-based svara distributions from Carnatic pitch tracks.</td><td>Intonation is rāga-relevant and context-sensitive; compact pitch representations improve when melodic context is considered rather than treating pitch as isolated static bins.</td></tr>
-  </table>
-  <div class="note good" style="margin-top:1rem"><b>Interpret carefully:</b> corpus composition, artist/style, tonic estimation, pitch tracking, and the definition of “stable” pitch all affect the result. These studies describe sampled performance practice, not a timeless law of Indian music.</div>
-  <p class="ref">Serrà, Koduri, Miron & Serra (2011); Koduri, Ishwar, Serrà & Serra (2014).</p>
+  <div class="kicker">07 · Empirical studies of tuning and intonation</div><h1>What does measured performance suggest?</h1>
+  <div class="grid3">
+    <div class="card"><h2>Serrà et al. (2011)</h2><p>Analysed sung <b>Carnatic and Hindustani</b> recordings using pitch-distribution methods. Their corpus showed different tuning tendencies: Carnatic singing corresponded more closely with <b>just-intonation references</b>, while Hindustani singing showed a stronger <b>equal-tempered influence</b>.</p></div>
+    <div class="card"><h2>Koduri et al. (2012; 2014)</h2><p>Moved beyond a single tuning table by examining <b>context-based svara distributions</b> and rāga intonation. Their work shows that performed pitch values can depend on <b>rāga and melodic context</b>.</p></div>
+    <div class="card"><h2>What this changes</h2><p>Empirical studies shift the discussion from asking only where śrutis <i>should</i> occur to asking how pitch is <b>actually realised in performance</b>. They also caution against treating Indian classical music as one fixed tuning system.</p></div>
+  </div>
+  <div class="note good" style="margin-top:1rem"><b>Review takeaway:</b> theoretical pitch frameworks and measured performance are related, but they are not identical. Contemporary intonation is tradition-, rāga- and context-sensitive.</div>
+  <p class="ref">Serrà et al. (2011); Koduri, Serrà & Serra (2012); Koduri et al. (2014).</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">08 · The 22-śruti question in modern literature</div><h1>One concept, several interpretations</h1>
+  <div class="grid3">
+    <div class="card"><h2>Musicological critique</h2><p><b>Rao & van der Meer</b> show that śruti has accumulated different interpretations across history. Equating it directly with a modern “microtone” or a fixed frequency point can therefore obscure its musicological context.</p></div>
+    <div class="card"><h2>Modern reconstruction</h2><p><b>Dr. Vidyadhar Oke</b> presents a mathematically specified 22-śruti model and translates it into practical instruments. This is useful as a contemporary reconstruction, but should be distinguished from universal empirical consensus.</p></div>
+    <div class="card"><h2>Computational formalisation</h2><p><b>ShrutiSense</b> (Ghosh & Athipatla, 2025) uses a fixed 22-śruti pitch space within a computational model. It demonstrates one way to operationalise śruti computationally, while the chosen grid remains a modelling assumption.</p></div>
+  </div>
+  <div class="note" style="margin-top:1rem"><b>Central tension:</b> is śruti best understood as a fixed pitch location, an intervallic/theoretical relation, a context-dependent intonational region, or something broader in musical experience? The literature does not give one uncontested answer.</div>
+  <p class="ref">Rao & van der Meer (2009, 2010); Mohan (2023); Oke; Ghosh & Athipatla (2025).</p>
 </section>
 
 <section class="slide">
@@ -319,6 +330,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
     <p><b>Jairazbhoy, N. A., & Stone, A. W. (1963).</b> Intonation in present-day North Indian classical music. <i>Bulletin of the School of Oriental and African Studies, 26</i>(1), 119–132. https://doi.org/10.1017/S0041977X00074309</p>
     <p><b>Rao, S., & van der Meer, W. (2009).</b> <i>Microtonality in Indian music: Myth or reality?</i> FRSM, Gwalior.</p>
     <p><b>Rao, S., & van der Meer, W. (2010).</b> The construction, reconstruction, and deconstruction of shruti. In J. Bor, F. Delvoye, J. Harvey, & E. te Nijenhuis (Eds.), <i>Hindustani Music: Thirteenth to Twentieth Centuries</i> (pp. 673–696). Manohar.</p>
+    <p><b>Oke, V.</b> Modern 22-śruti reconstruction and practical instrument work (including the 22-śruti harmonium). Included as a contemporary theoretical/practical model; see Oke’s published project materials.</p>
+    <p><b>Mohan, J. (2023).</b> The methodologies of Bharata Muni and Dr. Vidyadhar Oke for determination of 22 Shruti-s with reference to their practical applicability: Evidence and conflicts. <i>Sangeet Galaxy e-Journal, 12</i>(1), 53–63.</p>
     <p><b>Serrà, J., Koduri, G. K., Miron, M., & Serra, X. (2011).</b> Assessing the tuning of sung Indian classical music. In <i>Proceedings of the 12th International Society for Music Information Retrieval Conference (ISMIR)</i>, 157–162.</p>
     <p><b>Koduri, G. K., Serrà, J., & Serra, X. (2012).</b> Characterization of intonation in Karnāṭaka music by parametrizing context-based svara distributions. In <i>Proceedings of the 2nd CompMusic Workshop</i>.</p>
     <p><b>Koduri, G. K., Gulati, S., Rao, P., & Serra, X. (2012).</b> Rāga recognition based on pitch distribution methods. <i>Journal of New Music Research, 41</i>(4), 337–350. https://doi.org/10.1080/09298215.2012.735246</p>
