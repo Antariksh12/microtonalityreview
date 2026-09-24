@@ -37,95 +37,71 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 
 /* Added conference/institution logos only */
 /* ===== TOP-RIGHT BRANDING ===== */
-
 .corner-branding{
   position:absolute;
-  top:14px;
+  top:12px;
   right:28px;
   left:auto;
-
   display:flex;
   flex-direction:row;
   align-items:center;
   justify-content:flex-end;
-  gap:14px;
-
+  gap:12px;
   z-index:12;
   pointer-events:none;
 }
-
 .corner-branding img{
   display:block;
   object-fit:contain;
   flex-shrink:0;
 }
+.logo-naad{width:132px;height:66px}
+.logo-brain{width:74px;height:74px;border-radius:8px}
+.logo-nias{position:static;width:78px;height:66px;object-fit:contain}
 
-.logo-naad{
-  width:140px;
-  height:70px;
-}
-
-.logo-brain{
-  width:78px;
-  height:78px;
-  border-radius:8px;
-}
-
-.logo-nias{
-  position:static;
-  width:82px;
-  height:70px;
-  object-fit:contain;
-}
-
-/* Keep headings away from logos */
+/* Reserve the top-right branding zone so slide headings do not run underneath it */
 .slide > .kicker,
 .slide > h1,
 .slide > .title,
 .slide > .subtitle{
-  max-width:calc(100% - 360px);
+  max-width:calc(100% - 365px);
 }
 
-/* MAHE only on acknowledgements */
-.logo-mahe{
-  position:absolute;
-  right:34px;
-  bottom:48px;
-  width:92px;
-  height:92px;
+/* MAHE joins the same row only on the acknowledgements slide */
+.corner-branding.ack-branding{
+  gap:11px;
+}
+.corner-branding.ack-branding .logo-naad{width:120px;height:62px}
+.corner-branding.ack-branding .logo-brain{width:70px;height:70px}
+.corner-branding.ack-branding .logo-nias{width:74px;height:62px}
+.corner-branding.ack-branding .logo-mahe{
+  position:static;
+  width:76px;
+  height:70px;
   object-fit:contain;
-  z-index:12;
-  pointer-events:none;
+}
+.slide.ack-slide > .kicker,
+.slide.ack-slide > h1{
+  max-width:calc(100% - 455px);
 }
 
 @media(max-width:900px){
-  .corner-branding{
-    top:8px;
-    right:14px;
-    gap:8px;
-  }
-
-  .logo-naad{
-    width:100px;
-    height:50px;
-  }
-
-  .logo-brain{
-    width:56px;
-    height:56px;
-  }
-
-  .logo-nias{
-    width:60px;
-    height:50px;
-  }
-
+  .corner-branding{top:8px;right:14px;gap:7px}
+  .logo-naad{width:94px;height:48px}
+  .logo-brain{width:52px;height:52px}
+  .logo-nias{width:56px;height:48px}
   .slide > .kicker,
   .slide > h1,
   .slide > .title,
-  .slide > .subtitle{
-    max-width:calc(100% - 265px);
-  }
+  .slide > .subtitle{max-width:calc(100% - 255px)}
+
+  .corner-branding.ack-branding{gap:6px}
+  .corner-branding.ack-branding .logo-naad{width:82px;height:44px}
+  .corner-branding.ack-branding .logo-brain{width:48px;height:48px}
+  .corner-branding.ack-branding .logo-nias{width:50px;height:44px}
+  .corner-branding.ack-branding .logo-mahe{width:50px;height:48px}
+  .slide.ack-slide > .kicker,
+  .slide.ack-slide > h1{max-width:calc(100% - 305px)}
 }
 </style>
 </head>
@@ -133,20 +109,10 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 <div class="deck" id="deck">
 <section class="slide active">
   <div class="corner-branding">
-
-  <img src="./naad-eng-1a.webp"
-       class="logo-naad"
-       alt="Naad Nartan">
-
-  <img src="./BRAIN group.jpeg"
-       class="logo-brain"
-       alt="BRAIN Research Group">
-
-  <img src="./nias symbol.jpeg"
-       class="logo-nias"
-       alt="NIAS">
-
-</div>
+    <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
+    <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
+  </div>
   <div class="kicker">Conference presentation · Review paper</div>
   <div class="title">Beyond Pitch</div>
   <div class="subtitle">A Review of Microtonality in Indian Classical Music<br><span class="accent">Śruti · intonation · continuous pitch · auditory perception</span></div>
@@ -158,8 +124,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">01 · Framing the problem</div><h1>Why review “microtonality” at all?</h1>
   <div class="two">
     <div>
@@ -175,8 +141,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">02 · Definitions</div><h1>What do we mean by microtonality?</h1>
   <div class="grid3">
     <div class="card"><h2>Measurement</h2><p>In contemporary usage, “microtonal” often refers to pitch intervals or organisations finer than a semitone. <b>Cents</b> are a convenient logarithmic measurement: 100 cents = one 12-TET semitone.</p></div>
@@ -194,8 +160,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">03 · Western pitch foundations</div><h1>A reference point: octave, semitone, cents & 12-TET</h1>
   <div class="two">
     <div>
@@ -212,8 +178,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">04 · Indian musicological vocabulary</div><h1>Śruti is not just a smaller Western note</h1>
   <div class="two">
     <div>
@@ -229,8 +195,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">04 · Historical trajectory</div><h1>From śruti theory to rāga practice</h1>
   <p class="lead">Ideas of fine pitch differentiation are found across early Indian music-theoretical traditions, but their terminology and conceptual meaning developed over time. These sources should therefore not be read as descriptions of a single, fixed modern tuning system.</p>
 <div class="timeline">
@@ -266,8 +232,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">05 · The 22-śruti question</div><h1>22 positions, 22 intervals — or a theoretical framework?</h1>
   <div class="two">
     <div>
@@ -296,8 +262,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">06 · Performance reality</div><h1>Pitch is a trajectory, not only a coordinate</h1>
   <div class="grid">
     <div class="card"><h2>Stable intonation</h2><p>A performer may dwell around a relatively stable pitch region. Its exact centre can depend on rāga, phrase, tonic, performer and style.</p></div>
@@ -317,8 +283,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">07 · Empirical studies of tuning and intonation</div><h1>What does measured performance suggest?</h1>
   <div class="grid3">
     <div class="card"><h2>Serrà et al. (2011)</h2><p>Analysed sung <b>Carnatic and Hindustani</b> recordings using pitch-distribution methods. Their corpus showed different tuning tendencies: Carnatic singing corresponded more closely with <b>just-intonation references</b>, while Hindustani singing showed a stronger <b>equal-tempered influence</b>.</p></div>
@@ -333,8 +299,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">08 · The 22-śruti question in modern literature</div><h1>One concept, several interpretations</h1>
   <div class="grid3">
     <div class="card"><h2>Musicological critique</h2><p><b>Rao & van der Meer</b> show that śruti has accumulated different interpretations across history. Equating it directly with a modern “microtone” or a fixed frequency point can therefore obscure its musicological context.</p></div>
@@ -349,8 +315,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">08 · Three levels</div><h1>Do not collapse tuning, intonation and perception</h1>
   <div class="grid3">
     <div class="card"><h2>1 · System</h2><p><b>Tuning / theory</b><br>What pitch relations are proposed or used as references? Examples: ratios, scale structures, śruti frameworks.</p></div>
@@ -364,8 +330,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">09 · Auditory perception</div><h1>Is śruti simply the JND?</h1>
   <div class="two">
     <div>
@@ -400,8 +366,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">10 · Perception & musical experience</div>
 <h1>Does musical experience shape fine-pitch perception?</h1>
 
@@ -471,8 +437,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">11 · Two major traditions</div><h1>Hindustani and Carnatic: related, not interchangeable</h1>
   <table class="compare">
     <tr><th></th><th>Hindustani</th><th>Carnatic</th></tr>
@@ -487,8 +453,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">12 · Connecting the dots</div><h1>From a piano key to a rāga phrase</h1>
   <table class="compare">
     <tr><th>Question</th><th>Western reference vocabulary</th><th>Indian musicological/performance vocabulary</th><th>Auditory-science test</th></tr>
@@ -504,8 +470,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">13 · Research gaps</div><h1>Where the literature still leaves space</h1>
   <div class="grid3">
     <div class="card"><h2>Definition gap</h2><p>No single operational definition captures historical śruti theory, performed intonation, continuous ornaments and listener perception.</p></div>
@@ -521,8 +487,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">13 · Gaps in the literature</div><h1>What remains unresolved?</h1>
   <div class="grid">
     <div class="card"><h2>Definition gap</h2><p><i>Microtonality</i>, <i>śruti</i>, tuning, intonation and ornamentation are sometimes discussed together, although they describe different levels of musical organisation.</p></div>
@@ -539,8 +505,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">14 · Review methodology</div><h1>How this review connects four literatures</h1>
   <div class="grid">
     <div class="card"><h2>Historical / theoretical</h2><p>Nāṭyaśāstra, Saṅgītaratnākara and scholarship on śruti, svara and rāga.</p></div>
@@ -555,8 +521,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">15 · Conclusion</div><h1>Beyond pitch = beyond a frequency list</h1>
   <div class="grid">
     <div class="card"><h2>1</h2><p>Microtonality should not automatically mean “deviation from 12-TET.”</p></div>
@@ -571,8 +537,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">16 · Literature synthesis I · Indian musicology & acoustics</div><h1>What does the Indian-music literature actually establish?</h1>
   <table class="lit">
     <tr><th>Study</th><th>Tradition / method</th><th>Key contribution</th><th>Why it matters here</th></tr>
@@ -596,8 +562,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">17 · Literature synthesis II · auditory perception & training</div><h1>What does auditory science add?</h1>
   <table class="lit">
     <tr><th>Study</th><th>Method / population</th><th>Finding relevant to this review</th><th>Connection to śruti / microtonality</th></tr>
@@ -617,8 +583,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">18 · Evidence map · connecting the literatures</div><h1>From musicology → acoustics → perception</h1>
   <table class="lit">
     <tr><th>Level</th><th>Main question</th><th>Representative literature</th><th>What can be concluded?</th></tr>
@@ -635,8 +601,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">19 · References I · Indian musicology & computation</div><h1>References</h1>
   <div class="refs">
     <p><b>Jairazbhoy, N. A., & Stone, A. W. (1963).</b> Intonation in present-day North Indian classical music. <i>Bulletin of the School of Oriental and African Studies, 26</i>(1), 119–132. https://doi.org/10.1017/S0041977X00074309</p>
@@ -660,8 +626,8 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   <div class="corner-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">20 · References II · auditory perception & neuroscience</div><h1>References</h1>
   <div class="refs">
     <p><b>Tervaniemi, M., Just, V., Koelsch, S., Widmann, A., & Schröger, E. (2005).</b> Pitch discrimination accuracy in musicians vs nonmusicians: An event-related potential and behavioral study. <i>Experimental Brain Research, 161</i>, 1–10. https://doi.org/10.1007/s00221-004-2044-5</p>
@@ -677,14 +643,13 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   </div>
 </section>
 
-<section class="slide">
-  <div class="corner-branding">
+<section class="slide ack-slide">
+  <div class="corner-branding ack-branding">
     <img class="logo-naad" src="./naad-eng-1a.webp" alt="Naad Nartan Conference of Music">
     <img class="logo-brain" src="./BRAIN group.jpeg" alt="BRAIN Research Group">
+    <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   </div>
-  <img class="logo-nias" src="./nias symbol.jpeg" alt="National Institute of Advanced Studies">
   <div class="kicker">Acknowledgements</div>
-  <img class="logo-mahe" src="./mahe.png" alt="Manipal Academy of Higher Education">
   <h1>Acknowledgements</h1>
 
   <div class="grid">
