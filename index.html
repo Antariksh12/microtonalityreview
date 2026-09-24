@@ -40,14 +40,15 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 
 .corner-branding{
   position:absolute;
-  top:12px;
+  top:14px;
   right:28px;
   left:auto;
 
   display:flex;
+  flex-direction:row;
   align-items:center;
   justify-content:flex-end;
-  gap:12px;
+  gap:14px;
 
   z-index:12;
   pointer-events:none;
@@ -56,40 +57,36 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 .corner-branding img{
   display:block;
   object-fit:contain;
+  flex-shrink:0;
 }
 
-/* Order in HTML: Naad → BRAIN → NIAS */
-
 .logo-naad{
-  width:125px;
-  height:62px;
+  width:140px;
+  height:70px;
 }
 
 .logo-brain{
-  width:72px;
-  height:72px;
-  border-radius:7px;
+  width:78px;
+  height:78px;
+  border-radius:8px;
 }
 
 .logo-nias{
   position:static;
-  width:72px;
-  height:62px;
+  width:82px;
+  height:70px;
   object-fit:contain;
 }
 
-/* 
-   Reserve top-right area for logos.
-   Headings stop before reaching branding.
-*/
+/* Keep headings away from logos */
 .slide > .kicker,
 .slide > h1,
 .slide > .title,
 .slide > .subtitle{
-  max-width:calc(100% - 310px);
+  max-width:calc(100% - 360px);
 }
 
-/* MAHE remains acknowledgements-only */
+/* MAHE only on acknowledgements */
 .logo-mahe{
   position:absolute;
   right:34px;
@@ -101,40 +98,33 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
   pointer-events:none;
 }
 
-/* Mobile */
 @media(max-width:900px){
-
   .corner-branding{
     top:8px;
     right:14px;
-    gap:7px;
+    gap:8px;
   }
 
   .logo-naad{
-    width:88px;
-    height:44px;
-  }
-
-  .logo-brain{
-    width:50px;
+    width:100px;
     height:50px;
   }
 
+  .logo-brain{
+    width:56px;
+    height:56px;
+  }
+
   .logo-nias{
-    width:50px;
-    height:44px;
+    width:60px;
+    height:50px;
   }
 
   .slide > .kicker,
   .slide > h1,
   .slide > .title,
   .slide > .subtitle{
-    max-width:calc(100% - 205px);
-  }
-
-  .logo-mahe{
-    width:70px;
-    height:70px;
+    max-width:calc(100% - 265px);
   }
 }
 </style>
