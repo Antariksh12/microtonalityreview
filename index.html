@@ -36,14 +36,107 @@ svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto
 
 
 /* Added conference/institution logos only */
-.corner-branding{position:absolute;top:14px;left:28px;display:flex;align-items:center;gap:16px;z-index:12;pointer-events:none}
-.corner-branding img{display:block;object-fit:contain}
-.logo-naad{width:150px;height:76px}
-.logo-brain{width:92px;height:92px;border-radius:8px}
-.logo-nias{position:absolute;top:14px;right:30px;width:88px;height:76px;object-fit:contain;z-index:12;pointer-events:none}
-.logo-mahe{position:absolute;right:34px;bottom:48px;width:92px;height:92px;object-fit:contain;z-index:12;pointer-events:none}
-@media(max-width:900px){.corner-branding{left:18px;gap:10px}.logo-naad{width:112px;height:58px}.logo-brain{width:68px;height:68px}.logo-nias{right:18px;width:68px;height:58px}.logo-mahe{width:70px;height:70px}}
+/* ===== TOP-RIGHT BRANDING ===== */
 
+.corner-branding{
+  position:absolute;
+  top:12px;
+  right:28px;
+  left:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+
+  z-index:12;
+  pointer-events:none;
+}
+
+.corner-branding img{
+  display:block;
+  object-fit:contain;
+}
+
+/* Order in HTML: Naad → BRAIN → NIAS */
+
+.logo-naad{
+  width:125px;
+  height:62px;
+}
+
+.logo-brain{
+  width:72px;
+  height:72px;
+  border-radius:7px;
+}
+
+.logo-nias{
+  position:static;
+  width:72px;
+  height:62px;
+  object-fit:contain;
+}
+
+/* 
+   Reserve top-right area for logos.
+   Headings stop before reaching branding.
+*/
+.slide > .kicker,
+.slide > h1,
+.slide > .title,
+.slide > .subtitle{
+  max-width:calc(100% - 310px);
+}
+
+/* MAHE remains acknowledgements-only */
+.logo-mahe{
+  position:absolute;
+  right:34px;
+  bottom:48px;
+  width:92px;
+  height:92px;
+  object-fit:contain;
+  z-index:12;
+  pointer-events:none;
+}
+
+/* Mobile */
+@media(max-width:900px){
+
+  .corner-branding{
+    top:8px;
+    right:14px;
+    gap:7px;
+  }
+
+  .logo-naad{
+    width:88px;
+    height:44px;
+  }
+
+  .logo-brain{
+    width:50px;
+    height:50px;
+  }
+
+  .logo-nias{
+    width:50px;
+    height:44px;
+  }
+
+  .slide > .kicker,
+  .slide > h1,
+  .slide > .title,
+  .slide > .subtitle{
+    max-width:calc(100% - 205px);
+  }
+
+  .logo-mahe{
+    width:70px;
+    height:70px;
+  }
+}
 </style>
 </head>
 <body>
